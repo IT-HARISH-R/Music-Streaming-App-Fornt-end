@@ -1,36 +1,32 @@
-// src/App.js
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PlaylistList from './components/PlaylistList';
+import Home from './pages/Home';
+import Playlist from './pages/Playlist';
+import Profile from './pages/Profile';
+import Search from './pages/Search';
 import Navbar from './components/Navbar';
-import DeletePlaylist from './components/DeletePlaylist';
-import AddPlaylist from './components/AddPlaylist';
-import UpdatePlaylist from './components/UpdatePlaylist';
 
-// import PlaylistList from './components/PlaylistList';  // Displays list of playlists
-// import PlaylistDetail from './components/PlaylistDetail';  // Displays playlist details
-// import AddPlaylist from './components/AddPlaylist';  // Form to add a playlist
-// import UpdatePlaylist from './components/UpdatePlaylist';  // Form to update playlist
-// import Navbar from './components/Navbar';  // Navigation bar
 
 const App = () => {
   return (
     <Router>
+      {/* Navbar */}
       <Navbar />
-      <div className="container mx-auto p-4">
+
+      {/* Main content */}
+      <div className="bg-gray-900 text-white min-h-screen">
         <Routes>
-          {/* Route to display all playlists */}
-          <Route path="/" element={<PlaylistList />} />
+          {/* Home Page */}
+          <Route path="/" element={<Home />} />
 
-          {/* Route to display a specific playlist by ID */}
-          <Route path="/playlist/:id" element={<DeletePlaylist />} />
+          {/* Playlist Page (Dynamic based on playlistId) */}
+          <Route path="/playlist/:playlistId" element={<Playlist />} />
 
-          {/* Route to add a new playlist */}
-          <Route path="/add" element={<AddPlaylist />} />
+          {/* Profile Page */}
+          <Route path="/profile" element={<Profile />} />
 
-          {/* Route to update a playlist */}
-          <Route path="/update/:id" element={<UpdatePlaylist />} />
+          {/* Search Page */}
+          <Route path="/search" element={<Search />} />
         </Routes>
       </div>
     </Router>
