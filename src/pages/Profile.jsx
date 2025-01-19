@@ -1,43 +1,59 @@
 import React, { useState, useEffect } from 'react';
 import { FaUser, FaEdit, FaSignOutAlt } from 'react-icons/fa';
+import api from '../axios';
 
 const Profile = () => {
   const [user, setUser] = useState({
-    username: 'john_doe', 
-    email: 'john.doe@example.com', 
-    profilePicture: 'https://via.placeholder.com/150',
+    username: '',
+    email: '',
+    profilePicture: '',
   });
   const [isEditing, setIsEditing] = useState(false);
   const [updatedUser, setUpdatedUser] = useState(user);
 
-  // Simulate fetching user profile data from an API
+  const fetchData = async () => {
+    try {
+      const response = await api.get('/auth/profile');
+      setUser(response.data.user);
+      setUpdatedUser(response.data.user);
+      console.log(response.data.user);
+    } catch (error) {
+      console.error('Error fetching data:', error.response?.data || error.message);
+    }
+  };
+  console.log(user.username)
+
+
   useEffect(() => {
-    // Fetch user data from API (replace with actual call)
-    setUser({
-      username: 'john_doe',
-      email: 'john.doe@example.com',
-      profilePicture: 'https://via.placeholder.com/150',
-    });
+    fetchData();
   }, []);
 
+  // Toggle edit mode
   const handleEditToggle = () => {
     setIsEditing(!isEditing);
   };
 
+  // Handle input changes for editable fields
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUpdatedUser((prevUser) => ({ ...prevUser, [name]: value }));
   };
 
-  const handleSave = () => {
-    setUser(updatedUser);
-    setIsEditing(false);
-    // You can save the updated user data to a database or API here
+  // Save updated profile
+  const handleSave = async () => {
+    try {
+      await api.put('/auth/profile', updatedUser); // Use PUT for updating profile
+      setUser(updatedUser);
+      setIsEditing(false);
+    } catch (error) {
+      console.error('Error saving data:', error.response?.data || error.message);
+    }
   };
 
+  // Logout handler
   const handleLogout = () => {
-    // Perform logout functionality (e.g., clear auth token, redirect to login page)
-    console.log('Logging out...');
+    localStorage.removeItem('authToken');  // Clear auth token if applicable
+    window.location.href = '/login'; // Redirect to login page
   };
 
   return (
@@ -55,7 +71,7 @@ const Profile = () => {
 
       <div className="mt-6 flex items-center">
         <img
-          src={user.profilePicture}
+          src={user.profilePicture || 'default-avatar.png'}  // Fallback profile picture
           alt="Profile"
           className="w-40 h-40 rounded-full object-cover mr-6"
         />
@@ -63,7 +79,9 @@ const Profile = () => {
           {isEditing ? (
             <div>
               <div className="mb-4">
-                <label htmlFor="username" className="text-white">Username:</label>
+                <label htmlFor="username" className="text-white">
+                  Username:
+                </label>
                 <input
                   type="text"
                   id="username"
@@ -74,7 +92,9 @@ const Profile = () => {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="email" className="text-white">Email:</label>
+                <label htmlFor="email" className="text-white">
+                  Email:
+                </label>
                 <input
                   type="email"
                   id="email"

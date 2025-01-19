@@ -5,6 +5,8 @@ import Playlist from './pages/Playlist';
 import Profile from './pages/Profile';
 import Search from './pages/Search';
 import Navbar from './components/Navbar';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 
 const App = () => {
@@ -27,6 +29,10 @@ const App = () => {
 
           {/* Search Page */}
           <Route path="/search" element={<Search />} />
+
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
     </Router>
