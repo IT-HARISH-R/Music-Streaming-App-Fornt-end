@@ -2,13 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
-const TrackCard = ({ track }) => {
+const TrackCard = () => {
+
+  
+
+
   return (
     <div className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
       {/* Track Image */}
       <div className="relative">
         <img
-          src={track.albumCover}
+          src={track.artwork || 'default-album-art.jpg'} // Use artwork if available, else fallback to default
           alt={track.name}
           className="w-full h-48 object-cover rounded-t-lg"
         />
@@ -23,7 +27,7 @@ const TrackCard = ({ track }) => {
         {/* Play Button */}
         <div className="mt-4 flex items-center space-x-4">
           <ReactPlayer
-            url={track.audioUrl}
+            url={track.trackUrl} // Make sure track.trackUrl is the audio URL
             playing={false}
             controls
             width="100%"
@@ -39,7 +43,7 @@ const TrackCard = ({ track }) => {
 
         {/* View Details Link */}
         <Link
-          to={`/track/${track.id}`}
+          to={`/track/${track._id}`} // Use _id instead of id for MongoDB's default id
           className="text-blue-500 hover:underline text-sm mt-2 block"
         >
           View Details
@@ -48,5 +52,7 @@ const TrackCard = ({ track }) => {
     </div>
   );
 };
+
+
 
 export default TrackCard;

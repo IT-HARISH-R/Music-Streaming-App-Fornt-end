@@ -36,6 +36,12 @@ const Navbar = () => {
           >
             Profile
           </Link>
+          <Link
+            to="/uplode"
+            className="text-lg hover:text-gray-400 transition duration-300"
+          >
+            uplode
+          </Link>
         </div>
 
         {/* User Profile or Login */}

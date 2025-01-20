@@ -7,6 +7,8 @@ import Search from './pages/Search';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import TrackCard from './components/TrackCard';
+import TrackUpload from './components/TrackUpload';
 
 
 const App = () => {
@@ -33,6 +35,11 @@ const App = () => {
           <Route path="/login" element={<Login />} />
 
           <Route path="/signup" element={<Signup />} />
+
+          <Route path="/TrackCard" element={<TrackCard />} />
+
+          <Route path="/uplode" element={<TrackUpload />} />
+
         </Routes>
       </div>
     </Router>
